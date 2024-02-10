@@ -1,6 +1,8 @@
 package stepDefinitions;
 
-import io.cucumber.java.en.*;
+
+import cucumber.api.java.en.Then;
+import cucumber.api.java.en.When;
 import org.openqa.selenium.By;
 import testRunner.Driver;
 
@@ -12,6 +14,7 @@ public class Dynamic extends Driver {
         driver.findElement(By.cssSelector("#content > ul > li:nth-child(12) > a")).click();
 
     }
+
     @When("I can use all features")
     public void i_can_use_all_features() throws InterruptedException {
         driver.findElement(By.cssSelector("#content > div > p:nth-child(3) > a")).click();
@@ -26,9 +29,10 @@ public class Dynamic extends Driver {
         Thread.sleep(2000);
         driver.navigate().back();
     }
+
     @Then("I close window")
     public void i_close_window() {
-       driver.quit();
+        driver.quit();
     }
 
 }

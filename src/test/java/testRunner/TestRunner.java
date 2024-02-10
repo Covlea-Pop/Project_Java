@@ -1,8 +1,9 @@
 package testRunner;
 
 
-import io.cucumber.junit.Cucumber;
-import io.cucumber.junit.CucumberOptions;
+
+import cucumber.api.CucumberOptions;
+import cucumber.api.junit.Cucumber;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 
@@ -26,11 +27,8 @@ import org.junit.runner.RunWith;
                 "Features/Form_Authentication.feature",
                 "Features/HA_main.feature"
         },
-        plugin = {
-                "pretty",
-                "json:target/report.json",
-                "html:target/report.html"
-        },
+        plugin = {"pretty","json:target/report.json", "html:target/cucumber-reports"},
+
         glue = "stepDefinitions"
 
 
